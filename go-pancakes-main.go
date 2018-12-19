@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-	"time"
 )
 
 var debugMode = false
@@ -116,7 +115,6 @@ func getIterationCountForCase(pancakeCase []Pancake) int {
 
 		if debugMode {
 			printCase(pancakeCase)
-			time.Sleep(200)
 		}
 	}
 	return iterationCount
