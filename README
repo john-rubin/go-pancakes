@@ -1,0 +1,26 @@
+This was my first shot...ever at Golang.  Sorry if this is an eyesore.  But, I learned a bunch about the language tonight.
+
+I started looking into loading up a JSON configuration file at the end of this, instead of keeping the input as a raw string in the code solution, but something felt wrong about hardcoding a filepath to the JSON document, and I just stopped there.
+
+There's a debugEnabled variable that, when toggled, will output each step in the solving process.
+
+I sat down this afternoon and thought about the problem.  Given an interesting grouping:  
+---++++-+-+
+
+An interesting solution would be to start by flipping index 3 through 10, giving you:
++----++++-+
+
+And then flipping number 10:
+-----++++-+
+
+And then flipping 6-10:
++++++++++-+
+
+And then flipping 2-10:
+----------+
+
+And finally, 1-10:
++++++++++++
+
+Resulting in a total of 5 transformations, but adding a ton of complexity to the algorithm.
+When I broke it down, you can do a linear traversal through the list until you reach your first mismatch, flip that grouping, and every time I tried it on paper, I arrived at the most efficient option.  Maybe I'm wrong, though.  I included this example in case 4.  This method results in 5 transformations.
