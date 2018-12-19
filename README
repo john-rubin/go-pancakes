@@ -24,3 +24,5 @@ And finally, 1-10:
 
 Resulting in a total of 5 transformations, but adding a ton of complexity to the algorithm.
 When I broke it down, you can do a linear traversal through the list until you reach your first mismatch, flip that grouping, and every time I tried it on paper, I arrived at the most efficient option.  Maybe I'm wrong, though.  I included this example in case 4.  This method results in 5 transformations.
+
+I should include that I made sure that the stack actually flips using this method, and that I'm not just turning the cakes around to meet the specifications of the challenge.

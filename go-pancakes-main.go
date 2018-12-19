@@ -6,9 +6,9 @@ import (
 	"strings"
 )
 
-var debugMode = true
+var debugMode = false
 
-var input = `8
+var input = `9
 -
 ++
 --+--+
@@ -16,7 +16,8 @@ var input = `8
 +-+-+-+-+-+-+-
 ++--+------+++++
 ++-+---+---+-+-+---
-+++++++++++++++++++++`
++++++++++++++++++++++
+--------+-------+---+++`
 
 const (
 	HappySide rune = '+'
@@ -64,7 +65,9 @@ func tryParseRawInput(input string) (int, []string) {
 			count = len(splits)
 			fmt.Println(fmt.Sprintf("There are fewer lines than requested to process.  The count has been set to %v", count))
 		}
-		itemsToProcess := splits[1:]
+
+		//get a 1-max slice of the splits array, truncate it to the count that we want to process
+		itemsToProcess := splits[1:][0:count]
 		validationPassed := true
 		for _, v := range itemsToProcess {
 			if !validateInputLine(v) {
