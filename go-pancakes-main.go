@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-var debugMode = false
+var debugMode = true
 
 var input = `8
 -
@@ -47,6 +47,8 @@ func main() {
 			caseIterationCount := getIterationCountForCase(pancakeCase)
 			fmt.Println(fmt.Sprintf("%v: %v", caseNumber, caseIterationCount))
 		}
+	} else {
+		fmt.Println("Nothing to do.")
 	}
 }
 
